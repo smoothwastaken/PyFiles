@@ -51,7 +51,6 @@ paths = {
     ".bz2": "others/bz2/",
 
     ".avi": "videos/avi/"
-
 }
 
 def makeDir(dirname):

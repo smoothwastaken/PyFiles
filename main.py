@@ -18,6 +18,7 @@ paths = {
     ".mp4": "videos/mp4/",
     ".mkv": "videos/mkv/",
     ".avi": "videos/avi/",
+    ".mov": "videos/mov/",
 
     "Compressed": "compressed/",
     ".zip": "compressed/zip/",
@@ -27,6 +28,7 @@ paths = {
     "Documents": "documents/",
     ".pdf": "documents/pdf/",
     ".xlsx": "documents/xlsx/",
+    ".ods": "documents/ods/",
     ".txt": "documents/txt/",
     ".torrent": "documents/torrents/",
 
@@ -73,4 +75,7 @@ for file in filesToSort:
             print(newDir)
             shutil.move(originPathString + file.name, newDir + file.name)
     else:
-        pass
+        if file.name not in ["images", "videos", "compressed", "documents", "development", "others", "directories"]:
+            newDir = makeDir("directories/")
+            print(newDir)
+            shutil.move(originPathString + file.name, newDir + file.name)
